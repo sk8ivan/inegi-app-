@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href={% static "css/menu.css" %} />
+	<link rel="stylesheet" type="text/css" href={% static "css/fuente.css" %} />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" src={% static "js/jquery-1.11.2.min.js" %}></script>
+	<title>configuración</title>
+</head>
+<body class="container">
+	<header class="row">
+			<div class="col-md-6">
+				<a href="/">
+				<img src={% static "img/logoInegi.jpg" %} class="img-responsive">
+
+				</a>
+			</div>
+
+			<div class="col-md-6">
+				<h1 class="text-right">Configuración</h1>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col-xs-12 col-md-12 text-center">
+				<h2>Seleccione una opción</h2>
+			</div>
+		</div>	
+		<br><br>
+		<section class="row text-center">
+			<article class="col-xs-12 col-md-3 clic" id="add">
+				<a href="/parche/">
+					
+				<span class="iconos update"></span>
+				<br><br>
+				<p>Agregar un parche</p>
+					
+				</a>
+				
+			</article>
+
+			<article class="col-xs-12 col-md-3">
+				<a href="/listaParches/">
+				<span class="iconos consultaP"></span>
+				<br><br>
+				<p>Consulta parches</p>
+				</a>
+			</article>
+			
+			<article class="col-xs-12 col-md-3">
+				<a href="/AltaEquipo/">
+				<span class="iconos equipo"></span>
+				<br><br>
+				<p>Agregar equipo</p>
+				</a>
+			</article>
+
+			<article class="col-xs-12 col-md-3">
+				<a href="/equipos/">
+				<span class="iconos consultaE"></span>
+				<br><br>
+				<p>Consulta equipos</p>
+				</a>
+			</article>
+
+
+
+
+
+		</section>
+
+		
+<!--
+	<script type="text/javascript">
+
+		$('#add').click( function(){
+		$('#menuAdd').fadeToggle(600);
+		$('#menuAdd').css("display", "block");
+
+
+
+	});
+
+
+	</script>
+-->
+</body>
+</html>

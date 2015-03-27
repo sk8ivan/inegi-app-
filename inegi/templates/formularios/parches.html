@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href={% static "css/menu.css" %} />
+	<link rel="stylesheet" type="text/css" href={% static "css/fuente.css" %} />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" src={% static "js/jquery-1.11.2.min.js" %}></script>
+	<title>configuración</title>
+</head>
+<body class="container">
+	<header class="row">
+			<div class="col-md-6">
+				<a href="/">
+				<img src={% static "img/logoInegi.jpg" %} class="img-responsive">
+
+				</a>
+			</div>
+
+			<div class="col-md-6">
+				<h1 class="text-right">Configuración</h1>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col-xs-12 col-md-12 text-center">
+				<h2>Seleccione una opción</h2>
+			</div>
+		</div>	
+		<br><br>
+		<section class="row text-center">
+			<article class="col-xs-12 col-md-3 clic" id="add">
+				<a href="/windows/">
+					
+				<span class="iconos update"></span>
+				<br><br>
+				<p>Agregar un parche</p>
+					
+				</a>
+				
+			</article>
+
+			<article class="col-xs-12 col-md-3">
+				<a href="/listaParches/">
+				<span class="iconos consultaP"></span>
+				<br><br>
+				<p>Consulta parches</p>
+				</a>
+			</article>
+			
+			<article class="col-xs-12 col-md-3">
+				<a href="index.html">
+				<span class="iconos equipo"></span>
+				<br><br>
+				<p>Agregar equipo</p>
+				</a>
+			</article>
+
+			<article class="col-xs-12 col-md-3">
+				<a href="/configuracion/">
+				<span class="iconos consultaE"></span>
+				<br><br>
+				<p>Consulta equipos</p>
+				</a>
+			</article>
+
+
+
+
+
+		</section>
+
+		<section class="row formulario" >
+
+			<div class="col-xs-12 col-md-12 text-center">
+				<h3>Formularios de Parches</h3>
+
+			</div>
+			
+			<div class="col-xs-12 col-md-12">
+				<!-- aqui va el form -->
+				<form action="/parche/" method="post" class="form-horizontal">
+    				
+    				<input type='hidden' name='csrfmiddlewaretoken' value='9PumwKSZn9yQAD7HoxKRJBnAR80RbEJ4' /> 
+    				{% csrf_token %}
+ 					<div class="row">
+
+	 					<div class="col-xs-12 col-md-3 text-right">
+	 						<label for="id_nombreParche">Nombre del Parche:</label> 
+
+	 					</div>
+
+	 					<div class="col-xs-12 col-md-9">
+	 						<input id="id_nombreParche" maxlength="50" name="nombreParche" type="text" class="form-control"/>
+
+	 					</div>
+
+ 					</div>
+    				<br>
+    				<div class="row">
+
+	 					<div class="col-xs-12 col-md-3 text-right">
+							<label for="id_ParcheFecha">Fecha del parche:</label> 
+
+	 					</div>
+
+	 					<div class="col-xs-12 col-md-9">
+
+							<input id="id_ParcheFecha" maxlength="50" name="ParcheFecha" type="date" class="form-control" placeholder="DD / MM / YYYY"/>
+
+	 					</div>
+
+    				</div>
+    				<br>
+			
+
+    				<div class="row">
+    					<div class="col-xs-12 col-md-3 text-right">
+    						<label for="id_fechaAviso">Fecha de Aviso:</label> 
+
+    					</div>
+
+    					<div class="col-xs-12 col-md-9">
+    						<input id="id_fechaAviso" maxlength="20" name="fechaAviso" type="date" class="form-control" placeholder="DD / MM / YYYY"/>
+    					</div>
+
+
+    				</div>
+    				
+    				<br>
+    				
+    				<div class="row">
+    					<div class="col-xs-12 col-md-3 text-right">
+    						<label for="id_descripcion">Descripcion:</label> 
+    					</div>
+
+    					<div class="col-xs-12 col-md-9">
+
+    						<textarea cols="40" id="id_descripcion" name="descripcion" rows="10" class="form-control">
+						
+							</textarea>
+
+    					</div>
+    				</div>
+				
+					<br>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-3 text-right">
+
+							<label for="id_fechaInstalacion">Fecha de Instalacion:</label> 
+
+						</div>
+
+						<div class="col-xs-12 col-md-9">
+
+							<input id="id_fechaInstalacion" maxlength="20" name="fechaInstalacion" type="date" class="form-control" placeholder="DD / MM / YYYY" />
+
+
+
+						</div>
+
+					</div>
+
+					<br>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-3 text-right">
+
+							<label for="id_sistema">Sistema operativo:</label>
+
+						</div>
+
+						<div class="col-xs-12 col-md-9">
+						
+						<select id="id_sistema" name="sistema" class="form-control">
+							<option value="" selected="selected">---------</option>
+							<option value="1">Windows7 32 bits</option>
+							<option value="2">Windows8 32 bits</option>
+							<option value="3">Windows7 64 bits</option>
+							<option value="4">Windows8 64 bits</option>
+							<option value="5">Windows8.1 32 bits</option>
+							<option value="6">Windows8.1 64 bits</option>
+						</select>
+
+						</div>
+
+					</div>
+
+					<br>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-3"></div>
+						<div class="col-xs-12 col-md-9">
+
+    						<input type="submit" value="Añadir parche" class="form-control btn-primary"/>
+
+						</div>
+					</div>
+					 
+				
+
+				</form>
+
+
+			</div>
+
+
+		</section>
+<!--
+	<script type="text/javascript">
+
+		$('#add').click( function(){
+		$('#menuAdd').fadeToggle(600);
+		$('#menuAdd').css("display", "block");
+
+
+
+	});
+
+
+	</script>
+-->
+</body>
+</html>
